@@ -6,4 +6,5 @@ just edit in your api key for youtube and you're ready to go
 
 # how to use
 magictube *search query*
+
 example: *magictube no woman no cry*
