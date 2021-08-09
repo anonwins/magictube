@@ -6,7 +6,7 @@
 api_key="XXXXXXXXXXXXXXXXXXXX-XXXXXXXXXXXX-XXXXX"
 
 # Uncomment this to set the download directory
-# cd "/media/tsf/DeusEx/Music/magictube"
+# cd "~/Music/magictube"
 
 # SCRIPT ########################################################
 
