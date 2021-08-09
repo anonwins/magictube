@@ -1,6 +1,14 @@
 #!/bin/bash
 
-api_key="XXxxXxXXxXXXxx_xxXXXXxxX-XXXxxXXxxXX-xX"
+# CONFIG ########################################################
+
+# Enter your google api key here
+api_key="XXXXXXXXXXXXXXXXXXXX-XXXXXXXXXXXX-XXXXX"
+
+# Uncomment this to set the download directory
+# cd "/media/tsf/DeusEx/Music/magictube"
+
+# SCRIPT ########################################################
 
 if [ -z "$1" ]
   then
