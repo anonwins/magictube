@@ -2,8 +2,6 @@
 
 api_key="AIzaSyBUxI5Mnh_qd2H1AmhA-D5UkjQ2zi03-pU"
 
-trap 'exit 130' INT
-
 if [ -z "$1" ]
   then
     echo "No query"
@@ -18,6 +16,8 @@ video_id="${video_id#\"}"
 output=$(youtube-dl --no-warnings --get-filename -f 140 -no-part -o "%(title)s.%(ext)s" https://www.youtube.com/watch?v=$video_id)
 
 title=${output::-4}
+
+trap "rm '$output.part'; exit 130" INT
 
 echo "Downloading $title"
 
