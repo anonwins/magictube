@@ -1,6 +1,6 @@
 #!/bin/bash
 
-api_key="AIzaSyBUxI5Mnh_qd2H1AmhA-D5UkjQ2zi03-pU"
+api_key="XXxxXxXXxXXXxx_xxXXXXxxX-XXXxxXXxxXX-xX"
 
 if [ -z "$1" ]
   then
