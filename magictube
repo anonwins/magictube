@@ -6,6 +6,7 @@
 api_key="XXXXXXXXXXXXXXXXXXXX-XXXXXXXXXXXX-XXXXX"
 
 # Uncomment this to set the download directory
+# Default is your current working directory
 # cd "~/Music/magictube"
 
 # SCRIPT ########################################################
