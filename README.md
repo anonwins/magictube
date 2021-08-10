@@ -1,11 +1,19 @@
 # magictube
 
-A simple bash script that searches for a youtube video, downloads & saves its audio, and then plays it.
+a simple bash script that searches for a youtube video, downloads & saves its audio, and then plays it.
 
-All you gotta do is type the song you want to listen to. Hit enter. Done. Also the song is saved in your disk.
+# how it works
+
+all you gotta do is type the song you want to listen to. hit enter. done. also the song is saved in your disk.
+
+# why choose magictube
 
 Save memory, bandwidth, time, energy. Think smart. Think magictube. The tube experience, reimagined
 
-**how to run**: just type ./magictube and let the magic begin!
+# how to run
 
-**dependencies**: you need to have youtube-dl & curl for this script to work. it makes sense, right?
+just type ./magictube and let the magic begin!
+
+# dependencies
+
+youtube-dl & curl. tested on ubuntu 21.04 only. should work pretty much everywhere.
