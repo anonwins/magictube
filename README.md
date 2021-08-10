@@ -1,4 +1,4 @@
-# magictube
+# magictube v2.1
 
 a simple bash script that searches for a youtube video, downloads & saves its audio, and then plays it.
 
