@@ -1,37 +1,54 @@
 #!/bin/bash
+#
+# ███╗   ███╗ █████╗  ██████╗ ██╗ ██████╗████████╗██╗   ██╗██████╗ ███████╗
+# ████╗ ████║██╔══██╗██╔════╝ ██║██╔════╝╚══██╔══╝██║   ██║██╔══██╗██╔════╝
+# ██╔████╔██║███████║██║  ███╗██║██║        ██║   ██║   ██║██████╔╝█████╗  
+# ██║╚██╔╝██║██╔══██║██║   ██║██║██║        ██║   ██║   ██║██╔══██╗██╔══╝  
+# ██║ ╚═╝ ██║██║  ██║╚██████╔╝██║╚██████╗   ██║   ╚██████╔╝██████╔╝███████╗
+# ╚═╝     ╚═╝╚═╝  ╚═╝ ╚═════╝ ╚═╝ ╚═════╝   ╚═╝    ╚═════╝ ╚═════╝ ╚══════╝
+#
+# magictube v2.1 by tisfo anonwins @ https://github.com/anonwins/magictube
+#
+# CONFIG #################################################################
+#
+# Uncomment this to explicitly set the download directory
+# By default, your working directory is used
+# cd "/Music/magictube/"
+#
+# SCRIPT #################################################################
 
-# CONFIG ########################################################
+counter=1
 
-# Enter your google api key here
-api_key="XXXXXXXXXXXXXXXXXXXX-XXXXXXXXXXXX-XXXXX"
+while :
+do
 
-# Uncomment this to set the download directory
-# Default is your current working directory
-# cd "~/Music/magictube"
+  # ask for input
+  read -p "$counter. " query
 
-# SCRIPT ########################################################
+  # search on youtube
+  user_agent="Mozilla/5.0 (iPhone; CPU iPhone OS 6_1_3 like Mac OS X) AppleWebKit/536.26 (KHTML, like Gecko) CriOS/28.0.1500.12 Mobile/10B329 Safari/8536.25"
+  results=$(curl --silent -A "$user_agent" -G --data-urlencode "sp=mAEA" --data-urlencode "search_query=$query" --data-urlencode "app=m.html" --data-urlencode "persist_app=1" https://m.youtube.com/results)
+  
+  # get first video_id
+  video_id=$(echo $results | awk -F 'videoId' '{print $2}' | head -c20 | cut -c 10-)
 
-if [ -z "$1" ]
-  then
-    echo "No query"
-    exit
-fi
+  # get filename & title of video
+  output=$(youtube-dl --no-warnings --get-filename -f 140 -no-part -o "%(title)s.%(ext)s" https://www.youtube.com/watch?v=$video_id)
+  title=${output::-4}
 
-query="'$*'"
+  # delete temp file if script gets interrupted
+  trap "rm -f '$output.part'; exit 130" INT
 
-video_id=$(curl --silent -G --data-urlencode "key=$api_key" --data-urlencode "maxResults=1" --data-urlencode "q=$query" https://www.googleapis.com/youtube/v3/search | jq '.items[0] .id .videoId')
-video_id="${video_id#\"}"
+  # print the video title
+  echo -en "\033[1A\033[2K"
+  echo "$counter. $title"
 
-output=$(youtube-dl --no-warnings --get-filename -f 140 -no-part -o "%(title)s.%(ext)s" https://www.youtube.com/watch?v=$video_id)
+  # download the audio stream in m4a format
+  youtube-dl --no-warnings -f 140 -no-part -o "%(title)s.%(ext)s" https://www.youtube.com/watch?v=$video_id &>/dev/null
 
-title=${output::-4}
+  # open the file!
+  xdg-open "./$output" &>/dev/null
 
-trap "rm '$output.part'; exit 130" INT
+  ((counter++))
 
-echo "Downloading $title"
-
-youtube-dl --no-warnings -f 140 -no-part -o "%(title)s.%(ext)s" https://www.youtube.com/watch?v=$video_id &>/dev/null
-
-echo "Enjoy!"
-
-xdg-open "./$output" &>/dev/null
+done
