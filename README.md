@@ -8,11 +8,11 @@ a tool for searching, downloading and playing songs from youtube, all in minimal
 
 all you gotta do is type the song you want to listen to. hit enter. done.
 
-magictube finds the most relevan video, downloads & saves its audio, and then plays it.
+magictube finds the most relevant video, downloads & saves its audio, and then plays it.
 
 # why choose magictube
 
-Save memory, bandwidth, time, energy. Think smart. Think magictube. The tube experience, reimagined
+save memory, bandwidth, time, energy. think smart. it's the youtube experience, reimagined.
 
 # who is this good for
 
