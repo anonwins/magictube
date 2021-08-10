@@ -23,4 +23,4 @@ just type ./magictube and let the magic begin!
 
 # dependencies
 
-youtube-dl & curl. tested on ubuntu 21.04 only. should work pretty much everywhere.
+youtube-dl & curl. tested on ubuntu 21.04. should work pretty much everywhere.
