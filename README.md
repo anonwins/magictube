@@ -1,12 +1,13 @@
-# magictube v2.1
+# magictube 2.1
 
-a simple bash script that searches for a youtube video, downloads & saves its audio, and then plays it.
+a tool for searching, downloading and playing songs from youtube, all in minimal clix.
 
 ![magictube-demo-v2 1](https://user-images.githubusercontent.com/26126049/128795673-bade22ab-bab1-415e-acdc-1140bb654532.gif)
 
 # how it works
 
-all you gotta do is type the song you want to listen to. hit enter. done. also the song is saved in your disk.
+all you gotta do is type the song you want to listen to. hit enter. done.
+magictube finds the most relevan video, downloads & saves its audio, and then plays it.
 
 # why choose magictube
 
