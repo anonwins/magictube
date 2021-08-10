@@ -1,6 +1,6 @@
 # magictube 2.1
 
-a **minimal** tool that **automatically** searches, downloads and plays songs, from youtube.
+a **minimal** tool that **automatically** searches, downloads and plays songs from youtube.
 
 ![magictube-demo-v2 1](https://user-images.githubusercontent.com/26126049/128795673-bade22ab-bab1-415e-acdc-1140bb654532.gif)
 
