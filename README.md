@@ -1,7 +1,5 @@
 # magictube 2.1
 
-a tool for searching, downloading and playing songs from youtube, all in minimal clix.
-
 ![magictube-demo-v2 1](https://user-images.githubusercontent.com/26126049/128795673-bade22ab-bab1-415e-acdc-1140bb654532.gif)
 
 # how it works
