@@ -18,7 +18,7 @@ save memory, bandwidth, time, energy. think smart. it's the youtube experience, 
 
 when you want to build a music collection with your favourite songs, this is the easiest way i've ever thought of.
 
-if you want to make a music folder for yourself or a friend, or you want to play songs without having to research them
+if you want to make a music folder for yourself or a friend, or you want to play songs without having to research them.
 
 # how to run?
 
