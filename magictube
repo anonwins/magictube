@@ -4,7 +4,7 @@
 #  / / / / / / /_/ / /_/ / / /__/ /_/ /_/ / /_/ /  __/
 # /_/ /_/ /_/\__,_/\__, /_/\___/\__/\__,_/_.___/\___/ 
 #                 /____/                              
-# magictube v2.3 by anonwins
+# magictube v2.4 by anonwins
 # https://github.com/anonwins/magictube
 #
 # CONFIG #################################################################
@@ -16,6 +16,7 @@
 # SCRIPT #################################################################
 
 counter=1
+
 while :
 do
 
@@ -29,11 +30,11 @@ do
   # get first video_id
   video_id=$(echo $results | awk -F 'videoId' '{print $2}' | head -c20 | cut -c 10-)
 
-  # get filename & title of video
-  filename=$(youtube-dl --no-warnings --get-filename -f 140 -no-part -o "%(title)s.%(ext)s" https://www.youtube.com/watch?v=$video_id)
+  # get song filename & title
+  filename=$(youtube-dl -no-part --no-warnings --get-filename -f 140 -o "%(title)s.%(ext)s" https://www.youtube.com/watch?v=$video_id)
   title=${filename::-4}
 
-  # print the video title
+  # print the song title
   echo -en "\033[1A\033[2K"
   echo "$counter. $title"
 
@@ -41,10 +42,11 @@ do
   trap "[ -f \"$filename.part\" ] && rm -f \"$filename.part\"; echo \"\"; exit 130" INT
 
   # download the audio stream in m4a format
-  youtube-dl --no-warnings -f 140 -no-part -o "%(title)s.%(ext)s" https://www.youtube.com/watch?v=$video_id &>/dev/null
+  youtube-dl -no-part --no-warnings --no-mtime -f 140 -o "%(title)s.%(ext)s" https://www.youtube.com/watch?v=$video_id &>/dev/null
 
-  # open the file in detached process
+  # open the song in detached process
   setsid xdg-open "./$filename" > /dev/null 2>&1
 
   ((counter++))
+
 done
