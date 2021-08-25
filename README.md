@@ -36,10 +36,6 @@ tested on ubuntu 21.04. should work pretty much everywhere.
 
 just put the file in ***/usr/local/bin***.
 
-# what about the future?
-
-this is still very early version. there are things to be done, most importantly: 1) error handling, 2) searching & downloading timing optimizations.
-
 # new version 3.0
 
 this is an important version. the timings have been greatly improved. now it all depends on your internet connection. also 3 different downloaders are supported. you can add more/select your choice in the config section. there are some checks, now it handles 404 results properly.. generally i would say this is a pretty stable version. good job, me! thanks. ok, enjoy have fun everybody :D
