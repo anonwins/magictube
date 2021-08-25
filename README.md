@@ -26,11 +26,11 @@ just type ***magictube*** and let the magic begin!
 
 # requirements
 
-yt-dlp *OR* youtube-dl *OR* youtube-dlc.
+**curl** and one of the following:
 
-[yt-dlp](https://github.com/yt-dlp/yt-dlp) is recommended. Just put it in ***/usr/local/bin***.
+[**yt-dlp**](https://github.com/yt-dlp/yt-dlp) (remcommended) *OR* youtube-dl *OR* youtube-dlc.
 
-also curl. tested on ubuntu 21.04. should work pretty much everywhere.
+tested on ubuntu 21.04. should work pretty much everywhere.
 
 # how to install?
 
