@@ -26,7 +26,7 @@ just type ***magictube*** and let the magic begin!
 
 # requirements
 
-you must have [**curl**](#) and one of the following:
+you must have [**curl**](https://google.com/search?&q=install+curl+linux) and one of the following:
 
 [**yt-dlp**](https://github.com/yt-dlp/yt-dlp) (recommended), or [youtube-dl](https://youtube-dl.org), or [youtube-dlc](https://github.com/blackjack4494/yt-dlc).
 
