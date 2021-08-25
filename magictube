@@ -84,7 +84,7 @@ do
   trap "[ -f \"$filename.part\" ] && rm -f \"$filename.part\"; echo \"\"; exit 130" INT
 
   # download the audio stream in m4a format
-  yt-dlp --no-warnings --no-mtime -f 140 -o "$filename" https://www.youtube.com/watch?v=$video_id &>/dev/null
+  $downloader --no-warnings --no-mtime -f 140 -o "$filename" https://www.youtube.com/watch?v=$video_id &>/dev/null
 
   # open the song in detached process
   setsid xdg-open "./$filename" > /dev/null 2>&1
