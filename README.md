@@ -22,11 +22,15 @@ if you want to make a music folder for yourself or a friend, or you want to play
 
 # how to run?
 
-just type ./magictube and let the magic begin!
+just type ***magictube*** and let the magic begin!
 
 # requirements
 
 youtube-dl & curl. tested on ubuntu 21.04. should work pretty much everywhere.
+
+# how to install?
+
+just put the file in ***/usr/local/bin***.
 
 # what about the future?
 
