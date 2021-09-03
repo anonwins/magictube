@@ -4,7 +4,7 @@
 #  / / / / / / /_/ / /_/ / / /__/ /_/ /_/ / /_/ /  __/
 # /_/ /_/ /_/\__,_/\__, /_/\___/\__/\__,_/_.___/\___/ 
 #                 /____/
-# magictube v3.2 by anonwins (https://github.com/anonwins/magictube)
+# magictube v3.3 by anonwins (https://github.com/anonwins/magictube)
 
 # CONFIG ###################################################################
 
@@ -50,6 +50,7 @@ do
 
   # ask for input
   read -p "$counter. " query
+  query=${query//[^[:alpha:][:digit:] .,!@#$%&()?_-]/}
 
   # search on youtube
   user_agent="Mozilla/5.0 (iPhone; CPU iPhone OS 6_1_3 like Mac OS X) AppleWebKit/536.26 (KHTML, like Gecko) CriOS/28.0.1500.12 Mobile/10B329 Safari/8536.25"
@@ -67,14 +68,18 @@ do
   fi
 
   # get title
-  title=$(echo $results | awk -F "x22title" '{print $2}' | cut -c 48- | head -c100 | awk -F "x22" '{print $1}' | rev | cut -c 2- | rev | sed "s/\\\x27/'/g")
-
-  # get filename
-  filename="$title.m4a"
+  title=$(echo $results | awk -F "x22title" '{print $2}' | cut -c 48- | head -c120 | awk -F "x7d" '{print $1}' | rev | cut -c 6- | rev) # locate the title
+  title=$(echo $title | sed "s/\\\x22//g" | sed "s/\\\x27//g" | sed "s/\u0026/\&/g") # replace html-encoded characters
+  title=$(echo $title | sed "s/\\\//g" ) # delete remaining backslashes
+  title=${title//[^[:alpha:][:digit:] .,!@#$%&()?_-]/} # strip weird characters
+  title=$(echo $title | sed "s/\   /\ /g" | sed "s/\  /\ /g") # remove extra spaces
 
   # print title
   echo -en "\033[1A\033[2K"
   echo "$counter. $title"
+
+  # generate filename
+  filename="$title.m4a"
 
   # if song isn't already saved
   if [ ! -f "$filename" ]; then
