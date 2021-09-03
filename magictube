@@ -70,7 +70,6 @@ do
   # get title
   title=$(echo $results | awk -F "x22title" '{print $2}' | cut -c 48- | head -c120 | awk -F "x7d" '{print $1}' | rev | cut -c 6- | rev) # locate the title
   title=$(echo $title | sed "s/\\\x22//g" | sed "s/\\\x27//g" | sed "s/\u0026/\&/g") # replace html-encoded characters
-  title=$(echo $title | sed "s/\\\//g" ) # delete remaining backslashes
   title=${title//[^[:alpha:][:digit:] .,!@#$%&()?_-]/} # strip weird characters
   title=$(echo $title | sed "s/\   /\ /g" | sed "s/\  /\ /g") # remove extra spaces
 
