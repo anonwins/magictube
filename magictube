@@ -66,13 +66,13 @@ do
       continue
   fi
 
-  # get video title
+  # get title
   title=$(echo $results | awk -F "x22title" '{print $2}' | cut -c 48- | head -c100 | awk -F "x22" '{print $1}' | rev | cut -c 2- | rev | sed "s/\\\x27/'/g")
 
-  # get song filename
+  # get filename
   filename="$title.m4a"
 
-  # print song title
+  # print title
   echo -en "\033[1A\033[2K"
   echo "$counter. $title"
 
@@ -82,7 +82,7 @@ do
     # delete temp file if script gets interrupted & exit properly
     trap "[ -f \"$filename.part\" ] && rm -f \"$filename.part\"; echo \"\"; exit 130" INT
     
-    # download the audio stream in m4a format
+    # download song in m4a format
     $downloader --quiet --no-warnings --no-mtime -f 140 -o "$filename" https://www.youtube.com/watch?v=$video_id &>/dev/null
 
   fi
