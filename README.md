@@ -26,7 +26,9 @@ if you are on low memory, you don't want a browser playing videos to hear precio
 
 ## how to run?
 
-just type `magictube` and let the magic begin!
+type `./magictube` and let the magic begin!
+
+*or* put the file in `/usr/local/bin` then you can start it by typing `magictube` from any dir
 
 ## requirements
 
@@ -35,8 +37,3 @@ you must have [`curl`](https://google.com/search?&q=install+curl+linux) and one 
 [`yt-dlp`](https://github.com/yt-dlp/yt-dlp) (recommended), or [`youtube-dl`](https://youtube-dl.org), or [`youtube-dlc`](https://github.com/blackjack4494/yt-dlc).
 
 tested on ubuntu 21.04. should work pretty much everywhere.
-
-## how to install?
-
-
-put the file in `/usr/local/bin` then you can start it by typing `magictube`
