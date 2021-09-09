@@ -37,3 +37,10 @@ you must have [`curl`](https://google.com/search?&q=install+curl+linux) and one 
 [`yt-dlp`](https://github.com/yt-dlp/yt-dlp) (recommended), or [`youtube-dl`](https://youtube-dl.org), or [`youtube-dlc`](https://github.com/blackjack4494/yt-dlc).
 
 tested on ubuntu 21.04. should work pretty much everywhere.
+
+## configuration
+
+in the script's first section (Config) there are two options:
+
+1. working dir. this is the download folder. change this if you want
+2. downloader. this is the youtube-dl variant. first it checks for yt-dlp. you can change the order
