@@ -1,5 +1,7 @@
 # magictube
 
+## Not maintained. Use https://songpal.ml instead.
+
 a **minimal** tool that **automatically** searches, downloads, saves and plays songs.
 
 ![magictube-demo-v2 1](https://user-images.githubusercontent.com/26126049/128795673-bade22ab-bab1-415e-acdc-1140bb654532.gif)
