@@ -1,6 +1,6 @@
 # magictube
 
-## Not maintained. Use [https://songpal.ml](https://songpal.tsf.int.eu.org/) instead.
+## Not maintained. Use [https://songpal.tsf.int.eu.org](https://songpal.tsf.int.eu.org/) instead.
 
 a **minimal** tool that **automatically** searches, downloads, saves and plays songs.
 
